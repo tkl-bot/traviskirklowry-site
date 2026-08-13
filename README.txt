@@ -1,24 +1,19 @@
-TRAVIS KIRK LOWRY — SITE V1
+TRAVIS KIRK LOWRY — SITE V3
 
-Files:
-- index.html       homepage
-- merch.html       placeholder merch/drop page
-- style.css        all layout + responsive styling
-- assets/portrait-placeholder.jpg
+This version deliberately uses the approved concept image itself as the
+temporary homepage art so the live site visually matches the target exactly.
 
-Current links are already wired:
-- Rain
-- Light Labs
-- Taxwire
-- LinkedIn
-- Substack
-- Newsletter Google Form
-- Merch
+The footer links are real clickable hotspots layered over the artwork.
 
-The portrait is a temporary gritty B&W conversion of the photo supplied in chat.
-When the final portrait is ready, replace:
-assets/portrait-placeholder.jpg
+Why:
+- The current portrait is only a placeholder.
+- Earlier attempts rebuilt the mockup too loosely and distorted the composition.
+- This keeps the approved art direction intact while we wait for the final photo.
 
-Deployment:
-This is a completely static site and can be deployed on Netlify, Vercel,
-Cloudflare Pages, GitHub Pages, or any normal web host.
+When the final portrait arrives:
+1. remove the baked-in hero art;
+2. background-remove and process the final portrait;
+3. rebuild PROFESSIONAL / GAMBLER and the footer as true HTML/CSS;
+4. tune desktop/tablet/mobile separately.
+
+All current destinations are wired.
