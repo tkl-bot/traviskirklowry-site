@@ -1,0 +1,353 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --paper: #f5f4ef;
+  --ink: #111111;
+  --word-alpha: .78;
+  --rail-h: 72px;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+body {
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 620px;
+  overflow: hidden;
+  background: var(--paper);
+  isolation: isolate;
+}
+
+.portrait-wrap {
+  position: absolute;
+  z-index: 1;
+  inset: 10.5vh 3vw calc(var(--rail-h) + 2.5vh);
+  margin: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.portrait {
+  width: min(73vw, 1040px);
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 48%;
+  filter: grayscale(1) contrast(1.13) brightness(1.04);
+  mix-blend-mode: multiply;
+}
+
+/* These words intentionally sit above the portrait and remain slightly transparent. */
+.word {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  width: 103vw;
+  transform: translateX(-50%) scaleX(.88);
+  transform-origin: center;
+  text-align: center;
+  font-family: "Barlow Condensed", Impact, "Arial Narrow", sans-serif;
+  font-weight: 900;
+  line-height: .76;
+  letter-spacing: -.045em;
+  color: rgba(17, 17, 17, var(--word-alpha));
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+.word-top {
+  top: .8vh;
+  font-size: clamp(7.4rem, 18.6vw, 21rem);
+}
+
+.word-bottom {
+  bottom: calc(var(--rail-h) + .8vh);
+  font-size: clamp(9rem, 24vw, 28rem);
+}
+
+.rail {
+  position: absolute;
+  z-index: 4;
+  left: 1.6vw;
+  right: 1.6vw;
+  bottom: max(8px, env(safe-area-inset-bottom));
+  min-height: var(--rail-h);
+  display: grid;
+  grid-template-columns: 1.15fr 2.2fr .85fr .85fr .95fr .65fr;
+  align-items: stretch;
+  border-top: 1.5px solid rgba(17,17,17,.9);
+  border-bottom: 1.5px solid rgba(17,17,17,.9);
+  background: rgba(245, 244, 239, .86);
+  backdrop-filter: blur(5px);
+}
+
+.rail-item {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 13px;
+  font-size: clamp(.58rem, .72vw, .78rem);
+  line-height: 1.15;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  border-left: 1px solid rgba(17,17,17,.55);
+  transition: background .14s ease, color .14s ease;
+}
+
+.rail-item:first-child {
+  border-left: 0;
+}
+
+a.rail-item:hover,
+.rail-examples a:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.rail-examples {
+  display: grid;
+  grid-template-columns: auto repeat(3, auto);
+  gap: 10px;
+}
+
+.rail-examples a {
+  padding: 4px 5px;
+}
+
+.rail-label {
+  opacity: .62;
+}
+
+/* Merch */
+.merch-page {
+  min-height: 100svh;
+  padding: 24px clamp(18px, 3vw, 54px) 54px;
+}
+
+.merch-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 12px;
+}
+
+.merch-header h1 {
+  margin: 0;
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-size: clamp(5.5rem, 18vw, 17rem);
+  line-height: .72;
+  letter-spacing: -.04em;
+}
+
+.back-link {
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.merch-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.merch-card {
+  border: 1.5px solid var(--ink);
+  min-height: 52vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.placeholder-card {
+  padding: 22px;
+}
+
+.placeholder-art {
+  min-height: 42vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-size: clamp(4rem, 10vw, 10rem);
+  font-weight: 900;
+  line-height: .78;
+}
+
+.merch-card p,
+.drop-signup p {
+  margin: 0;
+  font-size: .75rem;
+  font-weight: 600;
+}
+
+.drop-signup {
+  margin-top: 18px;
+  padding: 18px 0;
+  border-top: 1.5px solid var(--ink);
+  border-bottom: 1.5px solid var(--ink);
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+}
+
+.signup-button {
+  padding: 12px 16px;
+  border: 1.5px solid var(--ink);
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.signup-button:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+@media (max-width: 900px) {
+  :root { --rail-h: 112px; }
+
+  .hero {
+    min-height: 620px;
+  }
+
+  .portrait-wrap {
+    inset: 11vh -7vw calc(var(--rail-h) + 1.5vh);
+  }
+
+  .portrait {
+    width: 112vw;
+    height: 100%;
+    object-position: 50% 45%;
+  }
+
+  .word {
+    width: 128vw;
+  }
+
+  .word-top {
+    top: 1.4vh;
+    font-size: clamp(5.6rem, 25vw, 12rem);
+  }
+
+  .word-bottom {
+    bottom: calc(var(--rail-h) + 1.4vh);
+    font-size: clamp(7.2rem, 34vw, 16rem);
+  }
+
+  .rail {
+    left: 10px;
+    right: 10px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .rail-item {
+    font-size: .62rem;
+    padding: 7px 8px;
+    border-top: 1px solid rgba(17,17,17,.45);
+  }
+
+  .rail-item:nth-child(-n+3) {
+    border-top: 0;
+  }
+
+  .rail-examples {
+    grid-template-columns: repeat(3, auto);
+    gap: 3px;
+  }
+
+  .rail-examples .rail-label {
+    display: none;
+  }
+
+  .merch-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  :root { --rail-h: 142px; }
+
+  .hero {
+    min-height: 650px;
+  }
+
+  .portrait-wrap {
+    inset: 12vh -24vw calc(var(--rail-h) + 1vh);
+  }
+
+  .portrait {
+    width: 148vw;
+    max-width: none;
+    object-position: 51% 44%;
+  }
+
+  .word {
+    width: 152vw;
+    transform: translateX(-50%) scaleX(.77);
+  }
+
+  .word-top {
+    top: 2vh;
+    font-size: clamp(5rem, 31vw, 8.5rem);
+  }
+
+  .word-bottom {
+    bottom: calc(var(--rail-h) + 1.2vh);
+    font-size: clamp(7rem, 43vw, 12rem);
+  }
+
+  .rail {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .rail-item:nth-child(3) {
+    border-top: 1px solid rgba(17,17,17,.45);
+  }
+
+  .rail-item {
+    min-height: 34px;
+  }
+
+  .rail-examples {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  .merch-header {
+    align-items: flex-start;
+  }
+
+  .merch-header h1 {
+    font-size: 28vw;
+  }
+
+  .drop-signup {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .signup-button {
+    text-align: center;
+  }
+}
