@@ -101,15 +101,42 @@ body{
 }
 
 @media (max-aspect-ratio:2/3){
+  /*
+    Mobile fix:
+    Keep the poster box at the exact same 2:3 ratio as the artwork.
+    Previously min-height:100svh made the invisible link layer taller than
+    the image on tall phones, so the tap targets sat below the visible buttons.
+  */
+  .hero{
+    min-height:100svh;
+    align-content:start;
+  }
+
   .poster{
     width:100vw;
     height:auto;
-    min-height:100svh;
+    min-height:0;
+    aspect-ratio:2 / 3;
   }
 
   .poster-art{
     width:100%;
-    height:auto;
+    height:100%;
+    object-fit:contain;
+  }
+
+  .hotspots{
+    z-index:10;
+    pointer-events:auto;
+  }
+
+  .shortform,
+  .longform,
+  .newsletter,
+  .merch{
+    pointer-events:auto;
+    touch-action:manipulation;
+    -webkit-tap-highlight-color:rgba(0,0,0,.08);
   }
 }
 

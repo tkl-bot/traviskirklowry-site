@@ -20,3 +20,10 @@ Links:
 Deploy:
 Upload/overwrite these files in the GitHub repo root.
 Netlify should auto-deploy from the connected repo.
+
+
+MOBILE FIX:
+- Corrected the mobile poster container so its clickable hotspot layer stays
+  aligned to the visible 2:3 artwork.
+- Added explicit mobile touch handling for Shortform, Longform, Newsletter,
+  and Merch.
