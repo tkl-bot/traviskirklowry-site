@@ -27,3 +27,10 @@ MOBILE FIX:
   aligned to the visible 2:3 artwork.
 - Added explicit mobile touch handling for Shortform, Longform, Newsletter,
   and Merch.
+
+
+DESKTOP GUTTER FIX:
+- Added a subtle repeating paper-grain background sampled to match the approved hero.
+- Added a small edge blend so the portrait poster no longer reads as a hard rectangle
+  against clean white side gutters.
+- Poster proportions and mobile link hit areas are unchanged.

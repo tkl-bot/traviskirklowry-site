@@ -8,7 +8,9 @@ html,body{
   margin:0;
   width:100%;
   min-height:100%;
-  background:var(--paper);
+  background-color:var(--paper);
+  background-image:url("assets/paper-grain.png");
+  background-repeat:repeat;
 }
 
 body{
@@ -20,7 +22,9 @@ body{
   min-height:100svh;
   display:grid;
   place-items:center;
-  background:var(--paper);
+  background-color:var(--paper);
+  background-image:url("assets/paper-grain.png");
+  background-repeat:repeat;
 }
 
 .poster{
@@ -185,4 +189,27 @@ body{
   border:2px solid #111;
   padding:12px 14px;
   font:700 12px/1 monospace;
+}
+
+
+/* Desktop edge-blend: the gutters use the same grain family as the poster. */
+.poster::before,
+.poster::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:18px;
+  z-index:1;
+  pointer-events:none;
+}
+
+.poster::before{
+  left:0;
+  background:linear-gradient(90deg, rgba(246,245,241,.82), rgba(246,245,241,0));
+}
+
+.poster::after{
+  right:0;
+  background:linear-gradient(270deg, rgba(246,245,241,.82), rgba(246,245,241,0));
 }
