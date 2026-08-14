@@ -39,3 +39,9 @@ FAVICON UPDATE
 - Added the approved black dollar-sign favicon on the grainy off-white tile.
 - Added favicon.ico plus PNG sizes for browser tabs and Apple devices.
 - Added favicon references to index.html and merch.html.
+
+MERCH PAGE UPDATE
+- Replaced the placeholder merch page with the approved layout.
+- Added the user's original hat and T-shirt images.
+- Added newsletter copy and linked "here" to the existing newsletter signup.
+- Homepage, hero, homepage links, mobile behavior, grain background, and favicon remain unchanged.
