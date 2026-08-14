@@ -34,3 +34,8 @@ DESKTOP GUTTER FIX:
 - Added a small edge blend so the portrait poster no longer reads as a hard rectangle
   against clean white side gutters.
 - Poster proportions and mobile link hit areas are unchanged.
+
+FAVICON UPDATE
+- Added the approved black dollar-sign favicon on the grainy off-white tile.
+- Added favicon.ico plus PNG sizes for browser tabs and Apple devices.
+- Added favicon references to index.html and merch.html.
